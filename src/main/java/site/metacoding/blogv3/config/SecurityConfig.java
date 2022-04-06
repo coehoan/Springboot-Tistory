@@ -13,7 +13,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         // super.configure(http);
-        http.csrf().disable();
+        http.csrf().disable(); // 이게 없으면 postman으로 테스트 불가능
         // /s로 들어오는 주소는 인증필요, 나머진 필요없음
         http.authorizeRequests()
                 .antMatchers("/s/**").authenticated()
