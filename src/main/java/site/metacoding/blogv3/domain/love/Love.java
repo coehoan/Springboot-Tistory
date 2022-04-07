@@ -9,6 +9,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+import javax.persistence.UniqueConstraint;
 
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
@@ -25,6 +27,9 @@ import site.metacoding.blogv3.domain.user.User;
 @Data
 @EntityListeners(AuditingEntityListener.class)
 @Entity
+@Table(uniqueConstraints = {
+        @UniqueConstraint(name = "love_uk", columnNames = { "postId", "userId" })
+})
 public class Love {
 
     @Id

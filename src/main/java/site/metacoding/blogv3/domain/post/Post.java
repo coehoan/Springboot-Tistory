@@ -2,6 +2,7 @@ package site.metacoding.blogv3.domain.post;
 
 import java.time.LocalDateTime;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EntityListeners;
 import javax.persistence.GeneratedValue;
@@ -32,9 +33,12 @@ public class Post {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(length = 60, nullable = false)
     private String title;
     @Lob
+    @Column(nullable = true)
     private String content;
+    @Column(length = 200, nullable = false)
     private String thumbnail;
 
     @JoinColumn(name = "userId")
