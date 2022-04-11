@@ -3,12 +3,16 @@
 <div class="container">
     <div class="my_auth_box">
         <div class="my_auth_form_box">
-            <div class="my_auth_form_box_title">Tstory</div>
-            <form action="">
-                <input class="my_auth_form_box_input" type="text" name="" placeholder="유저네임">
-                <input class="my_auth_form_box_input" type="password" name="" placeholder="비밀번호">
-                <input class="my_auth_form_box_input" type="password" name="" placeholder="비밀번호확인">
-                <input class="my_auth_form_box_input" type="email" name="" placeholder="이메일">
+            <div class="my_auth_form_box_title">Tistory</div>
+            <form action="/join" method="post">
+                <input class="my_auth_form_box_input" type="text" name="username" placeholder="유저네임" maxlength="20"
+                    required>
+                <input class="my_auth_form_box_input" type="password" name="password" placeholder="비밀번호" maxlength="20"
+                    required>
+                <input class="my_auth_form_box_input" type="password" name="" placeholder="비밀번호확인" maxlength="20"
+                    required>
+                <input class="my_auth_form_box_input" type="email" name="email" placeholder="이메일" maxlength="60"
+                    required>
                 <button class="my_secondary_btn" type="submit">회원가입</button>
             </form>
             <div class="my_auth_form_box_link">
