@@ -29,7 +29,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 // 로그인페이지를 loginForm으로 보내고
                 // 성공하면 디폴트페이지를 /로
                 .formLogin()
-                .loginPage("/loginForm")
+                // .usernameParameter("user") 변경가능
+                // .passwordParameter("pwd") 변경가능
+                .loginPage("/login-form")
+                .loginProcessingUrl("/login") // login 프로세스를 탄다
+                // .failureHandler(null) 실패했을 때
+                // .successHandler(null) 성공했을 때
                 .defaultSuccessUrl("/");
     }
 }
